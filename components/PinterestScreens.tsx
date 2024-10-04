@@ -30,7 +30,7 @@ const PinterestScreen = () => {
                 <ScrollView
                     style={styles.scrollContainer}
                     contentContainerStyle={styles.gridContainer}
-                    keyboardShouldPersistTaps="handled" // Allow tap on input field inside ScrollView
+                    keyboardShouldPersistTaps="handled"
                 >
                     {imageData
                         .filter((image) =>
@@ -38,9 +38,7 @@ const PinterestScreen = () => {
                         ) // Filter based on search
                         .map((image) => (
                             <View key={image.id} style={styles.imageContainer}>
-                                {/* Ensure Image is correctly displayed */}
                                 <Image source={image.uri} style={styles.image} />
-                                {/* Ensure Text is wrapped in <Text> component */}
                                 <Text style={styles.imageTitle}>{image.title}</Text>
                             </View>
                         ))}
@@ -52,9 +50,9 @@ const PinterestScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1, // Ensure the layout takes the full screen
+        flex: 1,
         backgroundColor: '#fff',
-        paddingTop: 50, // Add some space at the top
+        paddingTop: 50,
     },
     searchInput: {
         height: 40,
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     scrollContainer: {
-        flex: 1, // Ensure the ScrollView takes the remaining space
+        flex: 1,
     },
     gridContainer: {
         flexDirection: 'row',
