@@ -9,6 +9,8 @@ const imageData = [
     { id: 4, uri: require('../assets/images/image.png'), title: 'Image 4' },
     { id: 5, uri: require('../assets/images/image.png'), title: 'Image 5' },
     { id: 6, uri: require('../assets/images/image.png'), title: 'Image 6' },
+    { id: 7, uri: require('../assets/images/image.png'), title: 'Image 7' },
+    { id: 8, uri: require('../assets/images/image.png'), title: 'Image 8' },
 ];
 
 const PinterestScreen = () => {
@@ -29,7 +31,7 @@ const PinterestScreen = () => {
                 {/* Scrollable Grid Layout */}
                 <ScrollView
                     style={styles.scrollContainer}
-                    contentContainerStyle={styles.gridContainer}
+                    contentContainerStyle={styles.gridContainer} // Use contentContainerStyle for the grid
                     keyboardShouldPersistTaps="handled"
                 >
                     {imageData
@@ -64,7 +66,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     scrollContainer: {
-        flex: 1,
+        // Ensure ScrollView fills available space
+        width: '100%',
     },
     gridContainer: {
         flexDirection: 'row',
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     imageContainer: {
-        width: Dimensions.get('window').width / 2 - 15,
+        width: Dimensions.get('window').width / 2 - 15, // Set image container width dynamically
         marginBottom: 15,
     },
     image: {
